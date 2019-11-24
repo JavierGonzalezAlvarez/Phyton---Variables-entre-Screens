@@ -1,0 +1,40 @@
+#:kivy 1.11.0
+
+<ScreenManagement>:
+    Manual_insert:
+        id: manual_insert
+
+    First_room:
+        id: first_room
+
+    Welcome:
+        id: welcome
+
+<Manual_insert>:
+    name: "manual"
+    BoxLayout:
+        Label:
+            text: "Nombre"
+        TextInput:
+            id: full_name
+            pos: root.center_x - (self.size[0] * 0.5), root.top  * 0.75
+
+        Button:
+            text: "Ver saludo"
+            pos: root.center_x - (self.size[0] * 0.5) , root.top * 0.05
+            background_color: [3,1,0.2,.9]
+            on_release:
+                root.update_info()
+                root.manager.current = "first"
+
+<First_room>:
+    name: 'first'
+    Button:
+        text: root.names
+        on_release: root.manager.current = "Bienvenido"
+        background_color: [1.78,3,2.91,0.8]
+        font_size: 50
+
+<Welcome>:
+    Label:
+        text: 'Bienvenido!'
