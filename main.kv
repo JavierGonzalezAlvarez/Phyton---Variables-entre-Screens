@@ -5,11 +5,9 @@
     Manual_insert:
         id: manual_insert
 
-    First_room:
-        id: first_room
+    Greetings:
+        id: saludo
 
-    Welcome:
-        id: welcome
 
 <Manual_insert>:
     name: "manual"
@@ -26,16 +24,13 @@
             background_color: [3,1,0.2,.9]
             on_release:
                 root.update_info()
-                root.manager.current = "first"
+                root.manager.current = "first_screen"
 
-<First_room>:
-    name: 'first'
+<Greetings>:
+    name: 'first_screen'
     Button:
         text: root.names
         on_release: root.manager.current = "Bienvenido"
         background_color: [1.78,3,2.91,0.8]
         font_size: 50
 
-<Welcome>:
-    Label:
-        text: 'Bienvenido!'
